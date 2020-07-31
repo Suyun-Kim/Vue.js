@@ -1,0 +1,139 @@
+@charset "utf-8";
+/**
+ * html5doctor.com Reset Stylesheet v1.6.1 ('//html5doctor.com/html-5-reset-stylesheet/')
+ * Richard Clark ('//richclarkdesign.com')
+ * http://cssreset.com
+ */
+html, body
+{
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  /*overflow-y: scroll;*/
+  -webkit-overflow-scrolling: touch;
+  font-smoothing: antialiased;
+  font-display: fallback;
+}
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video
+{
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  vertical-align:baseline;
+  background:transparent;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  color: #000;
+  font-size: $font-body;
+  font-family:'Nanum Barun Gothic', Helvetica Neue,Apple SD Gothic Neo,sans-serif;
+  word-break: break-all;
+  line-height:170%;
+}
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  vertical-align:middle;
+  background:transparent;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {	display:block; }
+input[type='text'] {
+  -webkit-appearance: none;
+  font-size: $font-caption2;
+  border:1px solid #e0e0e0;
+  border-radius:3px;
+}
+button {
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  font-size: $font-button;
+}
+img {
+  object-position: center;
+  object-fit: cover;
+}
+* { box-sizing: border-box; }
+/**, *:focus, *:active, *:hover { outline: none; }*/
+nav ul { list-style:none; }
+ul,ol,dl,dt,dd { list-style: none; }
+blockquote, q {	quotes:none; }
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content:'';
+}
+a {
+  margin:0;
+  padding:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+  text-decoration: none;
+  color: #000;
+}
+a:hover {
+  color: #000;
+  text-decoration: none;
+}
+/* change colours to suit your needs */
+ins {
+  background-color:#ff9;
+  color:#000;
+  text-decoration:none;
+}
+/* change colours to suit your needs */
+mark {
+  background-color:#ff9;
+  color:#000;
+  font-style:italic;
+  font-weight:bold;
+}
+del { text-decoration: line-through; }
+abbr[title], dfn[title] {
+  border-bottom:1px dotted;
+  cursor:help;
+}
+table {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+/* change border colour to suit your needs */
+hr {
+  display:block;
+  height:1px;
+  border:0;
+  border-top:1px solid #cccccc;
+  margin:1em 0;
+  padding:0;
+}
+
+// applet
+
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
+

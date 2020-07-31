@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+// important
+$imt : unquote('!important');
+
+// item length
+$itemLength : 300;
+
+// font-size
+$font-headline : 18px;
+$font-body : 15px;
+$font-caption : 13px;
+$font-caption2 : 12px;
+$font-button : $font-caption;
+
+/********** color variable **********/
+// Primary
+$color-blue-gradient:linear-gradient(to bottom, #00c4ff, #e4ff74) !default;
+$color-yellow-green: #e4ff74 !default;
+$color-green: #cbfa0b !default;
+
+// Secondary
+$color-blue: #00c4ff !default;
+$color-orange: #ff5800 !default;
+
+// Basic
+$color-black: #000000 !default;
+$color-dark-grey: #343434 !default;
+$color-medium-grey: #6e6e6e !default;
+$color-grey: #afafaf !default;
+$color-light-grey: #f4f6f7 !default;
+$color-white: #FFFFFF !default;
+
+
+$colors: () !default;
+$colors: map-merge(
+    (
+      "blue-gradient":  $color-blue-gradient,
+      "yellow-green":   $color-yellow-green,
+      "blue":           $color-blue,
+      "orange":         $color-orange,
+      "black":          $color-black,
+      "dark-grey":      $color-dark-grey,
+      "medium-grey":    $color-medium-grey,
+      "grey":           $color-grey,
+      "light-grey":$color-light-grey,
+      "white":  $color-white,
+    ),
+    $colors
+);

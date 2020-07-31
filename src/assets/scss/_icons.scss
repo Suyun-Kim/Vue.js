@@ -1,0 +1,84 @@
+.icon{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+  &.ico-check{
+    @include bg-img(ic/ic_check_bold);
+  }
+  &.ico-delete{
+    @include bg-img(ic/ic_delete_black);
+  }
+  &.ico-pen{
+    @include bg-img(ic/ic_pen);
+  }
+  &.ico-pen-white{
+    @include bg-img(ic/ic_pen_white);
+  }
+  &.ico-sync{
+    @include bg-img(ic/ic_sync);
+  }
+  &.ico-close{
+    @include bg-img(ic/ic_close_filled);
+  }
+  &.ico-close-black{
+    @include bg-img(ic/ic_close_filled_black);
+  }
+  &.ico-close-circle{
+    @include bg-img(ic/ic_close_circle);
+  }
+  &.ico-close-bold{
+    @include bg-img(ic/ic_close_bold);
+  }
+  &.ico-weather{
+    @include bg-img(ic/ic_weather);
+  }
+  &.ico-home{
+    @include bg-img(ic/ic_home);
+  }
+  &.ico-settings{
+    @include bg-img(ic/ic_settings);
+  }
+  &.ico-arrow-down{
+    @include bg-img(ic/ic_arrow_down_filled_black);
+  }
+  &.ico-calandar{
+    @include bg-img(ic/ic_calandar);
+  }
+  &.ico-search{
+    @include bg-img(ic/ic_search);
+  }
+  &.ico-list{
+    @include bg-img(ic/ic_list_normal);
+  }  
+  &.ico-new{
+    @include bg-img(ic/ic_new);
+  }  
+  &.ico-logout{
+    @include bg-img(ic/ic_logout);
+  }  
+  &.ico-mag-send-disabled{
+    @include bg-img(ic/ic_msg_send_disabled);
+  } 
+  &.ico-mag-send{
+    @include bg-img(ic/ic_msg_send);
+  }  
+  &.ico-setting{
+    @include bg-img(ic/ic_settings_white);
+  } 
+  &.ico-print{
+    @include bg-img(ic/ic_print);
+  } 
+  &.ico-arrow-up{
+    @include bg-img(ic/ic_arrow_up_filled_black);
+  } 
+  &.ico-arrow-down{
+    @include bg-img(ic/ic_arrow_down_filled_black);
+  } 
+  &.ico-exclamation{
+    @include bg-img(ic/ic_exclamation);
+  } 
+  img{
+    height: 100%;
+  }
+}

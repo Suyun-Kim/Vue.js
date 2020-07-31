@@ -1,0 +1,232 @@
+/* table */
+
+@for $i from 1 through 6 {
+  .item-col#{$i} { flex: $i 1 0;}
+}
+
+.bordered-tb{
+  display: flex;
+  width: 100%;
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  font-weight: 400;
+  border-bottom: 1px solid $color-light-grey;
+  transition: all 0.3s ease;
+  cursor: default;
+  &.title{
+    font-weight: 300;
+    &:hover,&.active{
+      background-color: transparent;
+      box-shadow:  none;
+    }
+  }
+  &.non-event{
+    &:hover,&.active{
+      background-color: transparent;
+      box-shadow:  none;
+    }
+  }
+  &.unstable{
+    font-weight: 300;
+  }
+  &:hover,&.active{
+    background-color: $color-light-grey;
+    box-shadow:  0 0 6px 0 rgba($color-black, 0.16);
+  }
+
+  [class^="item-col"]{
+    position: relative;
+    padding: 10px 0;
+    font-size: 13px;
+    text-align: center;
+    &:hover{
+      .item-tooltip-info{
+        display: block;
+      }
+    }
+    .form-field{
+      width: 96%;
+    }  
+    .item-tooltip-info{
+      top:30px;
+      left:50%;
+      width: 240px;
+      margin-left: -120px;
+      padding:20px 0 10px;
+      z-index: 12;
+      .tooltip-cont{
+        >*{
+          width: 50%;
+          line-height: 35px;
+        }
+      }
+    }     
+  }    
+
+  // 상단 필터 옵션 선택
+  .option-select{
+    display: none;
+    position: absolute;
+    top:50px;
+    left:50%;
+    margin-left: -75px;
+    width:150px;
+    background-color: $color-white;
+    border:1px solid $color-light-grey;
+    border-radius: 20px;
+    box-shadow:  0 0 10px 0 rgba($color-black, 0.15);
+    z-index: 5;
+    overflow: hidden;
+    cursor: pointer;
+    &.select-col2{
+      margin-left: -100px;
+      width: 200px;
+      .select-cont{
+        .cont-list{
+          width: 50%;
+          +.cont-list{
+            border-left:1px solid $color-light-grey;
+          }
+        }
+      }
+    }
+    .select-all{
+      line-height:50px;
+      font-weight: 400;
+      border-bottom:1px solid $color-light-grey;
+      &.active,&:hover{
+        text-decoration: underline;
+      }
+    }
+    .select-cont{
+      display: flex;
+      .cont-list{        
+        width: 100%;
+        .list-item{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 50px;
+          &.active,&:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  .button-round-outline{
+    &.list-active{
+      ~ .option-select{
+        display: block;
+      }
+    }
+  }  
+}
+
+.striped-tb{
+  display: flex;
+  width: 100%;
+  height: 40px; 
+  line-height: 40px;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-grow: 1;
+  font-weight: 400;
+  background-color: $color-white;
+  cursor: default; 
+  &:nth-of-type(odd){
+    background-color: $color-light-grey;
+    [class^="item-col"]{
+      border-color: $color-white;
+    }
+  }
+  &.title{
+    font-weight: 300;
+    background-color: $color-white;
+    [class^="item-col"]{
+      font-size: 12px;
+      border:none;
+    }
+    ~.striped-tb{
+      &:nth-of-type(odd){
+        background-color: $color-white;
+        [class^="item-col"]{
+          border-color: $color-light-grey;
+        }
+      }
+      &:nth-of-type(even){
+        background-color: $color-light-grey;
+        [class^="item-col"]{
+          border-color: $color-white;
+        }
+      }
+    }
+  }
+  &.total{
+    font-weight: 700;
+  }
+  .item{
+    font-size: 13px;
+  }
+  .item-check{
+    width: 30px;
+    background-color: $color-white;
+  }
+  [class^="item-col"]{
+    position: relative;
+    font-size: 13px;
+    text-align: center;    
+    border-right: 1px solid $color-light-grey; 
+    &:last-child{
+      border-right:none;
+    }
+  }  
+  //// 움직이는 셀
+  .draggable-item{
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    width: 80%;
+    border-radius: 12px;
+    background-color: $color-grey;
+    color:$color-white;
+    cursor: move;
+    &.active{
+      background-color: $color-blue;
+      box-shadow: 0 3px 6px 0 rgba($color-black, 0.3);;
+    }
+  }
+  .form-field{
+    height: 30px;
+    width: 90%;
+  }
+}
+
+// 기본
+.common-tb{
+  display: flex;
+  align-items: center;
+  cursor: default;
+  .item{
+    flex-basis: 120px;
+    font-size: 13px;
+    font-weight: 300;
+  } 
+  .form-field{
+    // flex:1 1 0;
+    width: 200px;
+    ~.item{
+      margin-left: 60px;
+    }
+  }
+  ~.common-tb{
+    margin-top: 10px;
+  }
+  &.fs-12{
+    .item{
+      font-size: 12px;
+    }
+  }
+}

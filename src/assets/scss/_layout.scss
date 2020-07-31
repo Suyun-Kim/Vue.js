@@ -1,0 +1,479 @@
+.dp-f{display: flex !important;}
+.justify-start{justify-content: flex-start !important;}
+.justify-end{justify-content: flex-end !important;}
+.justify-between{justify-content: space-between !important;}
+.justify-center{justify-content: center !important;}
+.align-items-center{align-items: center !important;}
+.align-items-end{align-items: flex-end !important;}
+.bd-t01{border-top:1px solid $color-light-grey}
+.bd-grey{border:1px solid $color-grey}
+.blind {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+/* layout */
+
+.smart-wrap{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  // align-items: stretch;
+  min-width: 1440px;
+  min-height: 100%;
+  background-color: $color-light-grey;
+  overflow: auto;
+}
+.smart-side{
+  $inner:10px;
+
+  display: flex;
+  flex-direction: column;
+  min-width: 260px;
+  width: 260px;
+  .side-logo{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 130px;
+  }
+  .side-nav{
+    height: 210px;
+    padding-right: $inner;
+    padding-left: $inner;
+  }
+  .side-body{
+    height: calc(100vh - 130px - 210px - 100px);
+    padding-right: $inner;
+    padding-left: $inner;
+    padding-bottom: $inner;
+    &.gnb-body{
+      height: calc(100vh - 130px - 210px - 35px - 100px);
+    }
+  }
+  .side-footer{
+    height: 100px;
+    padding-right: $inner;
+    padding-left: $inner;
+  }
+}
+.smart-container{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100vh;
+  min-width: 960px;
+  .container-head{
+    height: 130px;
+  }  
+  .container-body{
+    // height: calc(100vh - 130px);
+    // margin:0 10px;
+    background-color: $color-white;
+    .cont-title{
+      margin: 30px 30px 0;
+    }
+    .cont-section{
+      height: calc(100vh - 130px - 80px);
+      padding: 0 30px;
+    }
+
+  }
+}
+
+/////////////////////////////////////////
+// smart-gnb
+/////////////////////////////////////////
+
+.smart-gnb{
+
+  .gnb-nav{
+    $img-h:18px;
+
+    padding-top: 30px;
+    .nav-list{
+      position: relative;
+      .list-item{
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 50px;
+        width: 100%;
+        padding:0 16px 0 20px;
+        font-size: 15px;
+        border-radius: $img-h + 7px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        &.active{
+          background-color: $color-black;
+          color:$color-white;
+          &:after{
+            content: '';
+            display: block;
+            position: absolute;
+            top:16px;
+            right:16px;
+            width: $img-h;
+            height: $img-h;  
+            @include bg-img(ic/ic_arrow_right_bold);          
+          }
+        }
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .gnb-body-title{
+    padding: 0 30px 20px;
+    font-weight: 300;
+  }    
+  .gnb-body{
+    .gnb-body-list{
+      display: flex;
+      justify-content: space-between;    
+      padding-top: 15px;  
+      margin: 0 -5px;
+      .list-item{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+        padding: 15px;
+        text-align: center;
+        color:$color-white;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+/////////////////////////////////////////
+// smart-container
+/////////////////////////////////////////
+.smart-container{
+  position: relative;
+  .container-head{
+    .head-date{
+      $img-h:36px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: $img-h;
+      margin-top: 52px;
+      .date-left{
+        width: $img-h;
+        height: $img-h;
+        margin-right: 53px;
+        @include bg-img(ic/ic_arrow_left_filled); 
+      }
+      .date-right{
+        width: $img-h;
+        height: $img-h;
+        margin-left: 53px;
+        @include bg-img(ic/ic_arrow_right_filled); 
+      }
+      .date-select{
+        width: $img-h - 6px;
+        height: $img-h - 6px;
+        margin-top: 2px;
+        margin-left: 10px;
+        @include bg-img(ic/ic_calandar); 
+      }
+    }
+  }
+  .container-body{
+    .cont-title{
+      .item{        
+        [class^="button-"]{
+          width: 92%;
+          padding: 0;
+        }
+      }
+    }      
+  }  
+}
+
+/////////////////////////////////////////
+// smart-sta
+/////////////////////////////////////////
+.smart-sta{
+  position: relative;
+  .sta-search{
+    padding-top: 30px;
+    .form-field{
+      $input-h:30px;
+
+      height: 50px;
+      padding:10px;
+      .icon{
+        width: $input-h;
+        height: $input-h;
+        margin: 0 10px 0 0;
+      }
+      .field-input{
+        height: $input-h;
+      }
+      .field-line{
+        border:none;
+        box-shadow: 0 3px 6px 0 rgba($color-black, 0.16);
+      }
+
+    }
+  }
+  .sta-cont{
+    .sta-memo{
+      padding:20px 20px 15px 20px;
+      background-color: $color-yellow-green;
+      border-top: 10px solid $color-green;
+      + .sta-memo{
+        margin-top: 20px;
+      }
+      .memo-cont{
+        textarea{
+          width: 100%;
+          min-height: 180px;
+          padding:0;
+          border:none;
+          font-size: 15px;
+          line-height: 26px;
+          resize: none;
+          overflow: hidden;
+        }
+      }
+      .memo-foot{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 90px;
+        .button-memo{
+          $img-h:24px;
+
+          height: $img-h;
+          text-align: left;;
+          .icon{
+            display: inline-block;
+            width: $img-h;
+            height: $img-h;            
+          }
+          ~.button-memo{
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+  .sta-footer{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width:260px;
+    height: 100px;
+    z-index: 6;
+    .sta-footer-cont{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: inherit;
+      padding-bottom: 12px;
+      .cont-item{
+        width: 72px;
+        height: 72px;
+        background-color: rgba($color-white,0.8);
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 400;
+        text-align: center;
+        .icon{
+          display: block;
+          width: 30px;
+          height: 30px;
+          margin:0 auto 5px ;
+          
+        }
+      }
+    }
+  }
+  .sta-message{
+    position: absolute;
+    top:0;
+    left:260px;
+    width: 100%;
+    height: 100%;
+    padding:0 10px;
+    background-image: $color-blue-gradient;
+    z-index: 5;
+    transition: all 0.3s ease;
+    &.active{
+      left:0;
+    }
+    .message-cont{
+      margin-top: 50px;
+      background-color: rgba($color-white,0.8);
+      border-radius: 10px;
+      .cont-title{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+        padding: 0 20px;
+      }
+      .cont-section{
+        height: calc(100vh - 240px - 250px);
+
+        .message-list{
+          padding:10px 20px;
+          .list-item{
+            +.list-item{
+              margin-top: 25px;
+            }
+          }
+          .list-title{
+            display: flex;
+            align-items: center;
+            height: 30px;
+            font-size: 12px;
+            font-weight: 300;
+          }
+          .list-cont{
+            padding:10px;
+            background-color: rgba($color-black, 0.4);
+            border-radius: 10px;
+            color:$color-white;
+          }
+        }
+      }
+      .cont-foot{
+        padding: 20px 5px 5px;
+        textarea{
+          width: 160px;
+          height: 40px;
+          padding:0;
+          border:none;
+          font-size: 13px;
+          line-height: 20px;
+          resize: none;
+          overflow: hidden;
+        }
+        .foot-cont{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding:0 8px 0 15px;
+          height: 60px;
+          background-color: $color-white;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+}
+
+/////////////////////////////////////////
+// common
+/////////////////////////////////////////
+
+ // 락커
+.locker-room{
+  @keyframes flash {
+    0% { opacity: 1; } 
+    50% { opacity: .1; } 
+    100% { opacity: 1; }
+  }
+  .locker-room-box{
+    display: flex;
+    flex-direction: row;
+    
+    .locker-col{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin-right: 10px;
+      .item{
+        width: 40px;
+        height: 20px;
+        margin-bottom: 10px;
+        font-size: 12px;
+        text-align: center;
+        border:1px solid $color-grey;    
+        cursor: pointer;  
+        .item-text{
+          display: block;
+          &.point{
+            animation: flash linear 1s infinite;
+          }
+        }
+        &:hover{
+          .item-tooltip-info{
+            display: block;
+          }
+        }
+        .item-tooltip-info{
+          top:0;
+          left:50px;
+          width: 200px;
+          padding:20px 0 10px;
+          z-index: 1;
+          
+          .tooltip-cont{
+            >*{
+              width: 50%;
+              line-height: 30px;
+            }
+          }
+          &.right{
+            left:auto;
+            right:50px;
+          }
+        }   
+      }
+    }
+  }  
+  // 락카 상황별 컬러
+  .assign{
+    background-color: $color-green;
+  }
+  .non-assign{
+    background-color: $color-white;
+  }
+  .recent{
+    background-color: $color-orange;
+    color:$color-white;
+  }
+  .vip{
+    background-color: $color-blue;
+  }
+  .checkout{
+    background-color: $color-black;
+    color:$color-white;
+  }
+  .break{
+    background-color: $color-grey;
+  }
+  .unused{
+    background-color: #950000;
+    color:$color-white;
+  }
+  .holding{
+    background-color: #06009b;
+    color:$color-white;
+  }
+}
+
+.button-box{
+  display: flex;
+  flex-direction: row;
+  [class^="button-"]{
+    margin-right: 10px;
+    &:last-child{
+      margin-right: 0;
+    }
+  }  
+}
+

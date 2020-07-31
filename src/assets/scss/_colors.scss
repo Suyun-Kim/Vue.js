@@ -1,0 +1,36 @@
+
+//@each $color, $value in $colors {
+//  .fc-#{$color}{
+//    color: #{$value};
+//  }
+//  .bg-#{$color}{
+//    background-color: #{$value};
+//  }
+//}
+
+/* font color */
+.fc-blue-gradient{color:$color-blue-gradient $imt;}
+.fc-yellow-green{color:$color-yellow-green $imt;}
+.fc-green{color:$color-green $imt;}
+.fc-blue{color:$color-blue $imt;}
+.fc-orange{color:$color-orange $imt;}
+.fc-black{color:$color-black $imt;}
+.fc-dark-grey{color:$color-dark-grey $imt;}
+.fc-medium-grey{color:$color-medium-grey $imt;}
+.fc-grey{color:$color-grey $imt;}
+.fc-light-grey{color:$color-light-grey $imt;}
+.fc-white{color:$color-white $imt;}
+
+/* background-color */
+.bg-blue-gradient{background-image:$color-blue-gradient $imt;}
+.bg-yellow-green{background-color:$color-yellow-green $imt;}
+.bg-green{background-color:$color-green $imt;}
+.bg-blue{background-color:$color-blue $imt;}
+.bg-orange{background-color:$color-orange $imt;}
+.bg-black{background-color:$color-black $imt;}
+.bg-dark-grey{background-color:$color-dark-grey $imt;}
+.bg-medium-grey{background-color:$color-medium-grey $imt;}
+.bg-grey{background-color:$color-grey $imt;}
+.bg-light-grey{background-color:$color-light-grey $imt;}
+.bg-white{background-color:$color-white $imt;}
+

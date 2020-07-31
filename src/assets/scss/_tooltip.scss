@@ -1,0 +1,63 @@
+//// tooltip
+// 툴팁 - 정보 
+.item-tooltip-info{
+  display: none;
+  position: absolute;  
+  color:$color-white;
+  text-align: left;
+  background-color: $color-black;
+  border:1px solid $color-medium-grey;
+  border-radius: 5px;
+  box-shadow: 0 0 6px 0 rgba($color-black, 0.16); 
+  letter-spacing: -0.5px;
+  .tooltip-cont{
+    display: flex;
+    flex-wrap: wrap;
+    padding:0 20px;
+    >*{
+      width: 50%;
+      line-height: 35px;
+      font-size: 13px;
+      font-weight: 400;
+      white-space: nowrap;
+    }
+    .title{
+      font-weight: 300;
+    }
+    +.tooltip-cont{
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid $color-medium-grey;
+    }
+  }
+}
+
+// 툴팁 - 우클릭
+.item-tooltip-click{
+  position: absolute;
+  top:12px;
+  left:12px;
+  padding:10px 0;
+  color:$color-white;
+  text-align: left;;
+  background-color: $color-black;
+  border:1px solid $color-medium-grey;
+  border-radius: 5px;
+  box-shadow: 0 0 6px 0 rgba($color-black, 0.16);
+  z-index: 3;
+  .tooltip-cont{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding:0 20px;
+    white-space: nowrap;
+    >*{
+      line-height: 35px;
+      font-size: 13px;
+      cursor: pointer;
+      &:hover,&.active{
+        text-decoration: underline;
+      }
+    }
+  }
+}

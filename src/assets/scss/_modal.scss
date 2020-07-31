@@ -1,0 +1,266 @@
+
+//// 페이지 내 popup
+.container-popup{
+  position: absolute;
+  bottom: 0;
+  left:0;  
+  width: 100%;
+  padding: 0 20px;
+  z-index: 10;
+  &.full{
+    top:0;
+    left:0;
+    height: 100%;
+    padding-top: 130px;
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      top:0;
+      left:0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color-black, 0.7);     
+      z-index: 0; 
+    }
+    .popup{
+      position: relative;
+      height: 100%;
+      background-color: $color-white;
+      border-radius: 20px 20px 0 0;
+      box-shadow: 0 0 10px 0 rgba($color-black, 0.15);
+      z-index: 1;
+      .popup-head{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;    
+        padding: 20px 20px 14px ;
+      }
+      .popup-body{
+        &.content-scroll{
+          height: calc(100vh - 200px);
+          padding: 0 25px;
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+  // 개인 팝업
+  .popup{
+    position: relative;
+    height: 560px;
+    background-color: $color-white;
+    border:1px solid $color-grey;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 0 10px 0 rgba($color-black, 0.15);
+    z-index: 1;
+    .popup-head{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;    
+      padding: 20px 20px 14px ;
+    }
+    .popup-body{      
+      &.content-scroll{
+        height: 490px;
+        padding: 0 25px;
+        margin: 0 5px;
+      }
+    }
+    // 락카조회
+    &.locker-room{      
+      height: 540px;
+      z-index: 2;
+      .locker-scroll{
+        padding: 0 25px;
+        height: 310px;
+      }
+      .locker-search{
+        display: flex;
+        align-items: center;
+        position: relative;
+        .search-result{
+          display: none;
+          position: absolute;
+          top: 60px;
+          right:0;
+          width: 400px;
+          padding:20px;
+          background-color: $color-white;
+          border:1px solid $color-black;
+          border-radius: 5px;
+          z-index: 2;
+        }
+        .form-field{
+          &.active{
+            ~.search-result{
+              display: block;
+            }
+          }
+        }
+        .striped-tb{
+          min-width: 100%;
+        }
+      }
+      .locker-room-foot{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        height: 80px;
+        padding: 0 20px 10px 10px;
+        background-color: $color-black;
+        .foot-setting{
+          $img-h:30px;
+
+          position: relative;
+          width:$img-h;
+          height: $img-h;
+          .locker-setting{
+            display: none;
+            position: absolute;
+            bottom: $img-h;
+            left: $img-h;
+            width: 150px;
+            padding:10px 20px;
+            background-color: $color-white;
+            border:1px solid $color-black;
+            border-radius: 5px;
+            box-shadow: 0 0 6px 0 rgba($color-black, 0.16);
+            font-size: 13px;
+            z-index: 2;
+            &.active{
+              display: block;
+            }
+            .list-item{
+              line-height: 35px;
+              cursor: pointer;
+              &:hover,&.active{
+                text-decoration: underline;
+              }
+            }
+          }
+
+        }
+        .foot-cont{
+          display: flex;
+          flex-direction: column;
+          font-size: 13px;
+          .cont-text{
+            align-self: center;
+            width: 100px;
+            padding-right: 10px;
+            color:$color-white;
+            text-align: right;
+          }
+          .cont-box{
+            align-self: center;
+            width: 60px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            &.checkout{
+              border:1px solid $color-medium-grey;
+              line-height: 24px;
+            }
+          }
+        }
+      } 
+    }
+  }
+}  
+
+//// 개별 modal
+.modal{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color-black,0.7);
+  z-index: 20;
+  .modal-dialog{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+  }
+  .modal-content{
+    display: flex;
+    background-color: $color-white;
+    flex-direction: column;
+    justify-content: center;    
+    .modal-head{
+      display: flex;
+      align-items: center;
+      height: 50px;
+      padding-left: 20px;
+      background-color: $color-black;
+      font-size: 15px;
+      color:$color-white;
+    }  
+    .modal-body{
+      display: flex;
+    }
+    &.locker{
+      width: 900px;
+      .modal-body{
+        flex-direction: column;
+      }
+      .locker-room{      
+        height: 290px;      
+        z-index: 2;          
+      }
+    }
+    &.common-code{
+      width: 1160px;
+      .code-aside{
+        display: flex;
+        flex-direction: column;
+        width: 240px;
+        border-right: 1px solid $color-grey;
+      }
+      .code-content{
+        display: flex;
+        flex-direction: column;
+        width: 920px;
+      }
+    }
+  }
+  .modal-sub{
+    display: flex;
+    background-color: $color-white;
+    flex-direction: column;
+    justify-content: center; 
+    border-radius: 5px;
+    .modal-head{
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 20px 20px 4px;
+      .icon{
+        width: 36px;
+        height: 36px;
+      }
+    }    
+  }
+  .wd-500{
+    width: 500px;
+  }
+  .wd-580{
+    width: 580px;
+  }
+  .wd-810{
+    width: 810px;
+  }
+  .modal-foot{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    [class^="button-"]{
+      ~[class^="button-"]{
+        margin-left: 20px;
+      }
+    }
+  }
+}

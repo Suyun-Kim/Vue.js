@@ -1,0 +1,10 @@
+// mixin - background image
+@mixin bg-img($file, $type:svg, $width:auto, $height:100%, $positionX: center, $positionY: center, $color-bg-repeat: no-repeat) {
+    background-image: url($bg-img-url + $file + '.' + $type);
+    background-size: $width $height;
+    background-position: $positionX $positionY;
+    background-repeat: $color-bg-repeat;
+  }
+  
+  // background image 기본경로
+  $bg-img-url: 'https://image.smartscore.kr/psn3/3.5/';
